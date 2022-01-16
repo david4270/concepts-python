@@ -148,11 +148,63 @@ del odd_sqr
 """
 tuple reference: https://www.geeksforgeeks.org/python-tuples/?ref=lbp
 """
+#declaration of tuples
+e = tuple([1,2,3,4,5,6])
+f = ("Come","On","You","Spurs")
+g = tuple('Tottenham')
 
+print(e)
+print(f)
+print(g)
 
+#Nested tuple
+h=(e,f,g)
+print(h)
 
+#Repetition tuple
+i = ('COYS',) *3
+print(i)
 
+#for loop tuple
+j = ('Yeet')
+for m in range(int(5)):
+    j = (j,)
+    print(j)
 
+del e
+del f
+del g
+del h
+del i
+del j
+
+#Unpacking tuples
+e = ("Come","On","You",'Spurs')
+f,g,h,i = e
+print(e)
+print(e[0][0]) #first character of first element of tuple
+print(f)
+print(g)
+print(h)
+print(i)
+
+del f,g,h,i
+
+#Concatenation of tuples
+f = ("Gunners","Are","The", "Runners")
+g = e+f
+print(e)
+print(f)
+print(g)
+
+#slicing of tuples
+print(g[4:])
+print(g[:4])
+
+#reverse tuple
+print(g[::-1])
+
+del e,f,g
 
 """
 set reference: https://www.geeksforgeeks.org/python-sets/?ref=lbp
