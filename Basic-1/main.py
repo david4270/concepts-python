@@ -22,6 +22,7 @@ print(d)
 
 b = a+c+d
 print(b)
+print(b.upper())
 
 print(a[6:11])
 print(a[12:21])
@@ -72,3 +73,14 @@ print(g)
 del e
 del f
 del g
+
+#list
+
+#tuple
+
+#set
+
+#dictionary
+
+#array
+
