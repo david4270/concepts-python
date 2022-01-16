@@ -30,7 +30,7 @@ algo-1: basic mathematics **[planned]** [need details]
 
 algo-2: sorting algorithms **[planned]**
 
-algo-3: recurrences **[planned]** [need details]
+algo-3: recurrences **[planned]** [need details] 
 
 algo-4: permutations, combinations **[planned]** [need details]
 
