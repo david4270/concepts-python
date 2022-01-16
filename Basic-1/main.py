@@ -4,6 +4,7 @@
 """
 string reference: https://www.geeksforgeeks.org/python-strings/?ref=lbp
 """
+print("\n\n <<strings>> \n\n")
 #string declaration
 a = "Glory Glory Tottenham Hotspur \n"
 b = "and the Spurs go marching on \n\n"
@@ -88,6 +89,7 @@ del g
 """
 list reference: https://www.geeksforgeeks.org/python-list/?ref=lbp
 """
+print("\n\n <<lists>> \n\n")
 #list declaration and append
 e = []
 e.append(5)
@@ -148,6 +150,8 @@ del odd_sqr
 """
 tuple reference: https://www.geeksforgeeks.org/python-tuples/?ref=lbp
 """
+print("\n\n <<Tuples>> \n\n")
+
 #declaration of tuples
 e = tuple([1,2,3,4,5,6])
 f = ("Come","On","You","Spurs")
@@ -209,15 +213,63 @@ del e,f,g
 """
 set reference: https://www.geeksforgeeks.org/python-sets/?ref=lbp
 """
+print("\n\n <<Sets>> \n\n")
 
+#declaration of sets
+e = set("Tottenham Hotspur")
+print(e)
 
+f = set(["Glory","Glory","Tottenham","Hotspur"])
+print(f)
 
+g = set([0,1,2,3,3,3,4,5,6,6,7,7,7,8,9,9])
+print(g)
 
+h = set(["Tottenham", "Hotspur", 1882])
+print(h)
+
+#add and update set
+h.add(2022)
+h.add((1961,2008))
+h.update([1961,2008])
+
+print(h)
+
+#Accessing elements from set
+for i in h:
+    print(i, end=" ")
+
+print("\n")
+
+print("Hotspur" in h)
+
+#Removing elements from set
+h.remove((1961,2008))
+print(h)
+
+h.discard(2022)
+print(h)
+
+h.pop() #removes first one
+print(h)
+
+#clear set
+h.clear()
+print(h)
+
+del e,f,g,h
+
+#Frozenset - elements of frozen set remain same after creation
+str = ('C','O','Y','S')
+e = frozenset(str)
+print(e)
+
+del e, str
 
 """
 dictionary reference: https://www.geeksforgeeks.org/python-dictionary/?ref=lbp
 """
-
+#print("\n\n <<Dictionary>> \n\n")
 
 
 
@@ -225,7 +277,7 @@ dictionary reference: https://www.geeksforgeeks.org/python-dictionary/?ref=lbp
 """
 array reference: https://www.geeksforgeeks.org/python-arrays/?ref=lbp
 """
-
+#print("\n\n <<Arrays>> \n\n")
 
 
 
