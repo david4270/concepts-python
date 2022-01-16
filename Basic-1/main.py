@@ -269,16 +269,145 @@ del e, str
 """
 dictionary reference: https://www.geeksforgeeks.org/python-dictionary/?ref=lbp
 """
-#print("\n\n <<Dictionary>> \n\n")
+print("\n\n <<Dictionary>> \n\n")
 
+# Declaration of dictionary
+e = {"Name": "Galaxy S21 Ultra", 
+    "Screen size": 6.9, 
+    "Screen Type": "AMOLED",
+    "Processor": "Qualcomm Snapdragon 888",
+    "RAM": "16GB LPDDR5",
+    "Storage":"512GB UFS 3.1",
+    "Android version":11}
 
+print(e)
+
+f = dict({"Name": "Galaxy S21", 
+    "Screen size": 6.2, 
+    "Screen Type": "AMOLED",
+    "Processor": "Qualcomm Snapdragon 888",
+    "RAM": "8GB LPDDR5",
+    "Storage":"128GB UFS 3.1",
+    "Android version":11})
+
+print(f)
+
+g = dict([("Name", "Galaxy S21 Plus"), 
+    ("Screen size", 6.7), 
+    ("Screen Type", "AMOLED"),
+    ("Processor", "Qualcomm Snapdragon 888"),
+    ("RAM", "8GB LPDDR5"),
+    ("Storage","128GB UFS 3.1"),
+    ("Android version",11)])
+print(g)
+
+#Dictionary with Nested Keys
+h = {"Name": "Galaxy S22 Ultra", 
+    "Screen size": 6.9, 
+    "Screen Type": "AMOLED",
+    "Processor": {"Europe": "Samsung Exynos 2200", "Others":"Qualcomm Snapdragon 8 Gen 1"},
+    "RAM": "16GB LPDDR5",
+    "Storage":"512GB UFS 3.1",
+    "Android version":12}
+
+print(h)
+
+#Adding elements to dictionary
+i = {}
+i["Name"] = "iPhone 13 mini"
+i["Screen Size"] = 5.4
+i["Screen Type"] = "AMOLED"
+i["Processor"] = "Apple A15"
+i["RAM"] = "4GB LPDDR4X"
+i["Storage"] = "128GB Apple NVME"
+i["iOS version"] = 15
+
+print(i)
+
+# Accessing element
+print(e["Name"])
+print(h["Processor"])
+print(h["Processor"]["Europe"])
+print(h.get("Android version"))
+
+#Adding element
+i["User"] = 1
+print(i)
+
+#Deleting element
+del i["User"]
+print(i)
+
+#pop
+i.pop("RAM")
+print(i)
+
+#popitem
+i.popitem()
+print(i)
+
+#clear
+i.clear()
+print(i)
+
+del e,f,g,h,i
 
 
 """
 array reference: https://www.geeksforgeeks.org/python-arrays/?ref=lbp
 """
-#print("\n\n <<Arrays>> \n\n")
+import array as arr
 
+print("\n\n <<Arrays>> \n\n")
 
+# Declaration of array - arr.array(type, list)
+e = arr.array('i',[2,5,7])
+print(e)
+for i in e:
+    print(i, end = " ")
+print()
 
+f = arr.array('d',[3.12,5.45,8.56])
+print(f)
+for i in f:
+    print(i, end = " ")
+print()
 
+#Add element
+e.insert(1,4) #insert(index,element)
+e.insert(1,3)
+e.insert(4,6)
+print(e)
+
+f.append(9.93) #append(element)
+print(f)
+
+#Accessing element
+print(e[2])
+print(f[2])
+
+#Removing element
+e.remove(5) #remove(element)
+print(e)
+
+f.pop(2) #pop(index)
+print(f)
+
+#slicing
+g = e[1:3] #idx 1 to before 3
+print(g)
+
+g = e[1:] #Starting idx 1 to end
+print(g)   
+
+g = e[:] #all elements
+print(g)
+
+#searching
+print(e.index(3)) #return index of element
+
+#update
+e[4] = 8
+print(e)
+
+del e,f,g
