@@ -13,7 +13,7 @@ Project topics can be changed in planning stage.
 Basic python skills.
 https://www.geeksforgeeks.org/python-programming-language/
 
-**_basic-1_**: Deal with inputs and outputs, with basic data types **[planned]** [need details]
+**_basic-1_**: Basic practice with basic data types (string, list, tuple, set, dictionary, array) **[WIP]**
 
 basic-2: functions **[planned]** [need details]
 
