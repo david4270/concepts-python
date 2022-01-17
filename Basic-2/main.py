@@ -92,28 +92,31 @@ def differentiation(eqn,a,n):
 
 def main():
     global delta
+    n1 = 2
+    n2 = 3
     delta = 0.005
 
     str = "2*x**3+3*x**2"
 
-    integral = integration(str,2,3,delta)
-    integral_kwargs = integration_kwargs(str, a=2, b =3, n=delta)
-    simpsonintegral = simpsonIntegration(str,2,3,delta)
-    derivative = differentiation(str,2,delta)
+    integral = integration(str,n1,n2,delta)
+    integral_kwargs = integration_kwargs(str, a = n1, b = n2, n = delta)
+    simpsonintegral = simpsonIntegration(str,n1,n2,delta)
+    derivative = differentiation(str,n1,delta)
 
     print("Integration using trapezoidal rule:",integral)
     print("Integration using trapezoidal rule (kwargs):",integral_kwargs())
     print("Integration using Simpson's rule:",simpsonintegral)
     print("Derivative:", derivative)
 
-    yld = integration_yield(str,2,3,delta)
-
-    print("\n\nFirst five partial integrals are: ")
-    print(yld.__next__())
-    print(yld.__next__())
-    print(yld.__next__())
-    print(yld.__next__())
-    print(yld.__next__())
+    yld = integration_yield(str,n1,n2,delta)
+    
+    if((n2-n1)/delta > 5):
+        print("\n\nFirst five partial integrals are: ")
+        print(yld.__next__())
+        print(yld.__next__())
+        print(yld.__next__())
+        print(yld.__next__())
+        print(yld.__next__())
 
 
 if __name__ == "__main__":
