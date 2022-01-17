@@ -13,15 +13,17 @@ Project topics can be changed in planning stage.
 Basic python skills.
 https://www.geeksforgeeks.org/python-programming-language/
 
-**_basic-1_**: Basic practice with basic data types (string, list, tuple, set, dictionary, array) **[WIP]**
+**_basic-1_**: Basic practice with basic data types (string, list, tuple, set, dictionary, array) 
 
-basic-2: functions **[planned]** [need details]
+**_basic-2_**: functions fundamentals - differentiation and integration approximation
 
-basic-3: recursions (not sorting algorithms) **[planned]** [need details]
+**_basic-3_**: recursions (not sorting algorithms) **[planned]** [need details]
 
 basic-4: object oriented concepts **[planned]** [need details]
 
 basic-5: exception handling **[planned]** [need details]
+
+basic-6: python collections - counters, orderedDict, Defaultdict, Chainmap, ... **[planned]** [need details]
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
