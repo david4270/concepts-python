@@ -17,9 +17,9 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-2_**: functions fundamentals - differentiation and integration approximation
 
-**_basic-3_**: recursions (not sorting algorithms) **[planned]** [need details]
+**_basic-3_**: recursions - Factorial, Palindrome, Fibonacci, Tower of Hanoi
 
-basic-4: object oriented concepts **[planned]** [need details]
+**_basic-4_**: object oriented concepts **[WIP]** [need details]
 
 basic-5: exception handling **[planned]** [need details]
 
