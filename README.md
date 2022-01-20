@@ -19,7 +19,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-3_**: recursions - Factorial, Palindrome, Fibonacci, Tower of Hanoi
 
-**_basic-4_**: object oriented concepts **[WIP]** [need details]
+**_basic-4_**: object oriented concepts - mobile phones **[WIP]**
 
 basic-5: exception handling **[planned]** [need details]
 

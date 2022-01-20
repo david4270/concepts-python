@@ -30,7 +30,7 @@ class Phone:
 # iPhone class - child of Phone - OS version, serial ID, jailbroken
 
 
-# Pixel class - child of Phone - OS version, serial ID
+# Pixel class - child of Phone - OS version, Android build number, serial ID
 
 
 # Xiaomi class - child of Phone - OS version, serial ID, MIUI version, dual SIM support
@@ -38,4 +38,6 @@ class Phone:
 
 # Motorola class - child of Phone - OS version, serial ID, dual SIM support
 
+
+# etc class - child of Phone - OS version, serial ID
 
