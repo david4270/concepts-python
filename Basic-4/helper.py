@@ -22,6 +22,22 @@ class Phone:
     def getProc(self):
         print(self.proc)
         return self.proc
+
+    def getRAM(self):
+        print(self.ram)
+        return self.ram
+    
+    def getStorage(self):
+        print(self.storage)
+        return self.storage
+
+    def getDisplay(self):
+        print("Display Type: "+self.display["Type"] + "\nDisplay Size: " + str(self.display["Size"]))
+        return self.display
+    
+    def getOSType(self):
+        print(self.osType)
+        return self.osType
     
 
 # Galaxy class - child of Phone - OS version, serial ID, ONE UI version, KNOX counter, stylus support, dual SIM support
