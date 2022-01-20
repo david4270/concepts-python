@@ -26,7 +26,7 @@ def main():
     Iphone12mini.getProc()
     print()
 
-    #Don't really want to test other classes. All children classes are similar anyway
+    # ADD LOOP and INPUT
 
 if __name__ == "__main__":
     main()
