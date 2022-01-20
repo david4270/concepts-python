@@ -19,16 +19,16 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-3_**: recursions - Factorial, Palindrome, Fibonacci, Tower of Hanoi
 
-**_basic-4_**: object oriented concepts - mobile phones **[WIP]**
+**_basic-4_**: object oriented concepts - mobile phones
 
 basic-5: exception handling **[planned]** [need details]
 
-basic-6: python collections - counters, orderedDict, Defaultdict, Chainmap, ... **[planned]** [need details]
+basic-6: python collections - counters, orderedDict, Defaultdict, Chainmap, ... **[planned]** [need details] -> Maybe divided into multiple 'basic' projects? If it is difficult then it will be moved to intermediate
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
 
-algo-1: basic mathematics **[planned]** [need details]
+**_algo-1_**: basic mathematics **[planned]** [need details]
 
 algo-2: sorting algorithms **[planned]**
 

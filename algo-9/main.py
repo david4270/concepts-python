@@ -1,5 +1,3 @@
-# Basic Math in algorithms
-
 def main():
     ()
 
