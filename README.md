@@ -69,6 +69,14 @@ datasci-1:
 
 datasci-2: 
 
+datasci-3:
+
+datasci-4:
+
+datasci-5:
+
+datasci-6:
+
 ## **Probabilistic Reasoning**
 Revising concepts from probabilistic reasoning course (ECE368).
 
@@ -84,6 +92,13 @@ Intermediate-level python concepts and mini-projects.
 intermediate-1: 
 
 intermediate-2: 
+
+## **Machine Learning**
+Machine learning miniproject. Using Jupyter Notebook (.ipynb)
+
+ml-1:
+
+ml-2:
 
 ## **Problems**
 Solve questions from question banks like Leetcode

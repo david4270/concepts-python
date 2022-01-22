@@ -69,8 +69,8 @@ class Galaxy(Phone):
         return self.OneUIversion
 
     def getKNOXctr(self):
-        print(self.getKNOXctr)
-        return self.getKNOXctr
+        print(self.KNOXctr)
+        return self.KNOXctr
     
     def getSPen(self):
         print(self.SPen)
