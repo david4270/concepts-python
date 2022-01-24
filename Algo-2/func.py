@@ -149,7 +149,7 @@ class MergeSort:
                 lftptr += 1
             # If lftarr[lftptr] > rgtarr[rgtptr], fill arr[arrptr] from right array, and add 1 to rgtptr
             else:
-                print(rgtarr[rgtptr])
+                print(rgtarr[rgtptr], end = ' ')
                 self.list[arrptr] = rgtarr[rgtptr]
                 rgtptr += 1
             # Add 1 in arrptr
@@ -208,26 +208,130 @@ class HeapSort:
             self.heapify(size,maxi)
 
 """
-Radix sort
+Radix sort: O(d*(n+b))
 """
 
+class RadixSort:
+    def __init__(self, list):
+        self.list = list
+        self.radixsort(len(list))
+    
+    def radixsort(self,size):
+        maxi = self.getMaxSig(size)
+        exp = 1
+        while(maxi/exp > 0.99):
+            print(maxi/exp)
+            self.countRdxSort(size,exp)
+            for i in range(0,size):
+                print(self.list[i], end = ' ')
+            print()
+            exp *= 10    
+    
+    def getMaxSig(self,size):
+        maxi = self.list[0]
+        for i in range(1,size):
+            if(self.list[i] > maxi):
+                maxi = self.list[i]
+        
+        return maxi
+    
+    def countRdxSort(self,size,exp):
+        max = 1000
+        c = [0] * max
+        b = [0] * size
+
+        for j in range(0,size):
+            c[(int)(self.list[j]/exp)%10] = c[(int)(self.list[j]/exp)%10] + 1
+        
+        for i in range(1,max):
+            c[i] = c[i] + c[i-1]
+        
+        for j in range(size-1,-1,-1):
+            b[c[(int)(self.list[j]/exp)%10]-1] = self.list[j]
+            c[(int)(self.list[j]/exp)%10] = c[(int)(self.list[j]/exp)%10] - 1
+        
+        for j in range(0,size):
+            self.list[j] = b[j]
+        
+        del c
 
 """
-Selection sort
+Selection sort: O(n^2)
 """
 
+def SelectionSort(arr,size):
+    for i in range(0,size-1):
+        minidx = i
+        for j in range(i+1,size):
+            if(arr[minidx] > arr[j]):
+                minidx = j
+        temp = arr[minidx]
+        arr[minidx] = arr[i]
+        arr[i] = temp
+
+        for m in range(0,size):
+            print(arr[m], end=' ')
+        print()
 
 """
-Bubble sort
+Bubble sort: O(n^2)
 """
 
+def BubbleSort(arr, size):
+    if(size <= 1): return
+    for i in range(0,size-1):
+        if(arr[i] > arr[i+1]):
+            temp = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
+    
+    for i in range(0, size):
+        print(arr[i], end=' ')
+    
+    print()
+    BubbleSort(arr,size-1)
 
 """
-Insertion sort
+Insertion sort: O(n^2)
 """
 
+def InsertionSort(arr,size):
+    if(size <= 1): return
+
+    InsertionSort(arr,size-1)
+    last = arr[size-1]
+    j = size-2
+
+    while(j >= 0 and arr[j] > last):
+        arr[j+1] = arr[j]
+        j-=1
+    
+    arr[j+1] = last
+    for i in range(0,size):
+        print(arr[i], end = ' ')
+    print()
 
 """
 Counting sort
+O(n) - combination of O(n)s
 """
 
+def CountingSort(arr,size):
+    max = 1000
+    c = [0] * max
+    b = [0] * size
+
+    for j in range(0,size):
+        c[arr[j]] = c[arr[j]] + 1
+    
+    for i in range(1,max):
+        c[i] = c[i] + c[i-1]
+    
+    for j in range(0,size):
+        b[c[arr[j]]-1] = arr[j]
+        c[arr[j]] = c[arr[j]] - 1
+    
+    for j in range(0,size):
+        arr[j] = b[j]
+    
+    del c
