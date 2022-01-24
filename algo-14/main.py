@@ -1,5 +1,3 @@
-# Exception Handling
-
 def main():
     ()
 

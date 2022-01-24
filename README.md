@@ -21,7 +21,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-4_**: object oriented concepts - mobile phones
 
-basic-5: exception handling **[planned]** [need details]
+basic-5: exception handling **[planned]** [need details] - waiting for c++ basic-10...
 
 basic-6: python collections - counters, orderedDict, Defaultdict, Chainmap, ... **[planned]** [need details] -> Maybe divided into multiple 'basic' projects? If it is difficult then it will be moved to intermediate
 
@@ -63,19 +63,21 @@ algo-16: maximum flow problem **[planned]** [need details]
 algo-17: NP-completeness **[planned]** [need details]
 
 ## **Data Science**
-Basic data science skills, such as pandas, numpy, and pytorch.
+Basic data science skills, such as pandas, numpy, and pytorch. Also covers graphing libraries, such as matplotlib and seaborn.
 
 datasci-1: 
 
 datasci-2: 
 
-datasci-3:
+datasci-3: 
 
-datasci-4:
+datasci-4: 
 
-datasci-5:
+datasci-5: 
 
-datasci-6:
+datasci-6: 
+
+datasci-7: 
 
 ## **Probabilistic Reasoning**
 Revising concepts from probabilistic reasoning course (ECE368).
