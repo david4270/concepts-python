@@ -3,7 +3,7 @@ PEY is a great time to bring back my unused skills and learn more skills such as
 
 Project topics can be changed in planning stage.
 
-**[WIP]** - working in progress
+**[WIP]** - work in progress
 
 **[planned]** - planned exercise
 
@@ -21,7 +21,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-4_**: object oriented concepts - mobile phones
 
-basic-5: exception handling **[planned]** [need details] - waiting for c++ basic-10...
+**_basic-5_**: exception handling **[WIP]** [need details]
 
 basic-6: python collections - counters, orderedDict, Defaultdict, Chainmap, ... **[planned]** [need details] -> Maybe divided into multiple 'basic' projects? If it is difficult then it will be moved to intermediate
 
@@ -30,7 +30,7 @@ Revising algorithms and data structures course concepts (ECE345).
 
 **_algo-1_**: basic mathematics - arithmetic and geometric sequence (+Fibonacci and Factorial revisit) 
 
-**_algo-2_**: sorting algorithms **[WIP]**
+**_algo-2_**: sorting algorithms 
 
 algo-3: recurrences **[planned]** [need details] 
 
