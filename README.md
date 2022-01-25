@@ -21,9 +21,11 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-4_**: object oriented concepts - mobile phones
 
-**_basic-5_**: exception handling **[WIP]** [need details]
+**_basic-5_**: exception handling - simple calculator
 
-basic-6: python collections - counters, orderedDict, Defaultdict, Chainmap, ... **[planned]** [need details] -> Maybe divided into multiple 'basic' projects? If it is difficult then it will be moved to intermediate
+**_basic-6_**: python collections - counters, orderedDict, Defaultdict, Chainmap, ... **[WIP]** [need details]
+
+basic-7: map, reduced, and filer functions **[planned]** [need details]
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
@@ -91,9 +93,11 @@ probreas-3:
 ## **Intermediate**
 Intermediate-level python concepts and mini-projects.
 
-intermediate-1: 
+intermediate-1: More difficult object-oriented concepts - polymorphism, class and static varibles, destructors, metaclasses, reflection, garbage collection **[planned]** [need details]
 
-intermediate-2: 
+intermediate-2:
+
+intermediate-3: 
 
 ## **Machine Learning**
 Machine learning miniproject. Using Jupyter Notebook (.ipynb)
