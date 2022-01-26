@@ -2,6 +2,9 @@ from collections import Counter
 from collections import OrderedDict
 from collections import defaultdict
 from collections import ChainMap
+from collections import namedtuple
+
+from numpy import get_array_wrap
 
 def main():
     #Counter example
@@ -43,7 +46,76 @@ def main():
 
     #ChainMap
     #https://www.geeksforgeeks.org/chainmap-in-python/?ref=lbp
+    d1 = {'a': 1, 'b': 2}
+    d2 = {'c': 6, 'd': 5}
+    d3 = {'e': 3, 'f': 7}
+    d4 = {'a': 4, 'e': 2}
+    cm = ChainMap(d1,d2,d3,d4)
+    print(cm.maps)
+    print(list(cm.keys()))
+    print(list(cm.values()))
     
+    d5 = {'g':4, 'f':3}
+    c1 = cm.new_child(d5)
+    print(c1.maps)
+    print(list(c1.keys()))
+    print(list(c1.values()))
+    print(c1['a'])
+
+    c1.maps = reversed(c1.maps)
+    print(c1['a'])
+
+    #Namedtuple
+    #https://www.geeksforgeeks.org/namedtuple-in-python/?ref=lbp
+    FootyPlayer = namedtuple('FootyPlayer',['name','age','position','league','team','kitnum'])
+    StevieB = FootyPlayer('Steven Bergwijn',24,'LW','EPL','Tottenham Hotspur',23)
+    Sonny = FootyPlayer('Heung-Min Son',29,'LF','EPL','Tottenham Hotspur',7)
+    Harry = FootyPlayer('Harry Kane',28,'ST','EPL','Tottenham Hotspur',10)
+    Bryan = FootyPlayer('Brian Gil',20,'LW','EPL','Tottenham Hotspur',11)
+    Lucas = FootyPlayer('Lucas Moura',29,'RW','EPL','Tottenham Hotspur',27)
+    Hojbjerg = FootyPlayer('Pierre-Emile Hojbjerg',26,'CDM','EPL','Tottenham Hotspur',5)
+    Skippy = FootyPlayer('Oliver Skipp',21,'CDM','EPL','Tottenham Hotspur',29)
+    Hugo = FootyPlayer('Hugo Lloris',35,'GK','EPL','Tottenham Hotspur',1)
+    Royal = FootyPlayer('Emerson Royal',23,'RB','EPL','Tottenham Hotspur',12)
+    Reggie = FootyPlayer('Sergio Reguilon',25,'LB','EPL','Tottenham Hotspur',3)
+    Dier = FootyPlayer('Eric Dier',28,'CB','EPL','Tottenham Hotspur',15)
+    Romero = FootyPlayer('Christian Romero',23,'CB','EPL','Tottenham Hotspur',4)
+    Davinson = FootyPlayer('Davinson Sanchez',25,'CB','EPL','Tottenham Hotspur',6)
+    Japhet = FootyPlayer('Japhet Tanganga',22,'CB','EPL','Tottenham Hotspur',25)
+    Davies = FootyPlayer('Ben Davies',28,'LCB','EPL','Tottenham Hotspur',33)
+    Doherty = FootyPlayer('Matt Doherty',30,'RWB','EPL','Tottenham Hotspur',2)
+    Winky = FootyPlayer('Harry Winks',25,'CM','EPL','Tottenham Hotspur',8)
+    sess = ['Ryan Sessegnon',21,'LWB','EPL','Tottenham Hotspur',19]
+    Sess = FootyPlayer._make(sess)
+    gollini = {'name':'Pierluigi Gollini','age':26,'position':'GK','league':'EPL','team':'Tottenham Hotspur','kitnum':22}
+
+    print("What is Sonny's kit number?:",Sonny.kitnum)
+    print("What is Skippy's name?:",Skippy[0])
+    print("What is Stevie B's position?:",getattr(StevieB,'position'))
+    print("How old is Sess?:",Sess.age)
+    print(Lucas._asdict())
+    print(FootyPlayer(**gollini)) #Return namedtuple from dictionary
+    print(Bryan._fields)
+    print(Romero._replace(name='Cuti Romero'))
+
+    #Deque
+    #https://www.geeksforgeeks.org/deque-in-python/
+
+
+    #Heap Queue
+
+
+    #UserDict
+
+
+    #UserList
+
+
+    #UserString
+
+
+     
+
 
 
 if __name__ == "__main__":
