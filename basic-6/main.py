@@ -5,6 +5,9 @@ from collections import ChainMap
 from collections import namedtuple
 from collections import deque
 import heapq
+from collections import UserDict
+from collections import UserList
+from collections import UserString
 
 from numpy import get_array_wrap
 
@@ -144,9 +147,36 @@ def main():
     #Heap Queue
     #https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
     print("Heap queue example")
+    ls = [5,2,4,3,1]
+    heapq.heapify(ls)
+    print(list(ls))
+
+    heapq.heappush(ls,6) #Add 6
+    print(list(ls))
+
+    heapq.heappop(ls) #remove smallest element
+    print(list(ls))
+
+    heapq.heappushpop(ls,4) #Push 4 and pop smallest element
+    print(list(ls))
+
+    heapq.heapreplace(ls,5) #Pop smallest element, and 5 is pushed
+    print(list(ls))
+
+    heapq.heappush(ls,1)
+    heapq.heappush(ls,1)
+    heapq.heappush(ls,2)
+    heapq.heappush(ls,3)
+    heapq.heappush(ls,6)
+    heapq.heappush(ls,7)
+    print(list(ls))
+
+    print(heapq.nlargest(3,ls)) #largest 3 elements from ls
+    print(heapq.nsmallest(3,ls)) #smallest 3 elements from ls
 
     #UserDict
-
+    #https://www.geeksforgeeks.org/collections-userdict-in-python/
+    
 
     #UserList
 
