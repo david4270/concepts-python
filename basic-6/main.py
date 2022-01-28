@@ -3,12 +3,15 @@ from collections import OrderedDict
 from collections import defaultdict
 from collections import ChainMap
 from collections import namedtuple
+from collections import deque
+import heapq
 
 from numpy import get_array_wrap
 
 def main():
     #Counter example
     #https://www.geeksforgeeks.org/counters-in-python-set-1/
+    print("Counter example")
     arr = [3,6,1,2,2,4,2,3,3,6,4,6,2,5,4,8,6,8,5,8,3,8,3,7,9,7,9,5,6,4,4,6,3,4,3,2,1,6,4,3,3,2,4,6,7,3,3]
     print(Counter(arr))
 
@@ -21,6 +24,7 @@ def main():
 
     #OrderedDict
     #https://www.geeksforgeeks.org/ordereddict-in-python/?ref=lbp
+    print("OrderedDict example")
     od = OrderedDict()
     od['a'] = 5    
     od['b'] = 3    
@@ -36,6 +40,7 @@ def main():
 
     #DefaultDict
     #https://www.geeksforgeeks.org/defaultdict-in-python/?ref=lbp
+    print("DefaultDict example")
     dd = defaultdict(lambda: "NA")
     dd["a"] = 5
     dd["b"] = 3
@@ -46,6 +51,7 @@ def main():
 
     #ChainMap
     #https://www.geeksforgeeks.org/chainmap-in-python/?ref=lbp
+    print("Chainmap example")
     d1 = {'a': 1, 'b': 2}
     d2 = {'c': 6, 'd': 5}
     d3 = {'e': 3, 'f': 7}
@@ -67,6 +73,7 @@ def main():
 
     #Namedtuple
     #https://www.geeksforgeeks.org/namedtuple-in-python/?ref=lbp
+    print("NamedTuple example")
     FootyPlayer = namedtuple('FootyPlayer',['name','age','position','league','team','kitnum'])
     StevieB = FootyPlayer('Steven Bergwijn',24,'LW','EPL','Tottenham Hotspur',23)
     Sonny = FootyPlayer('Heung-Min Son',29,'LF','EPL','Tottenham Hotspur',7)
@@ -100,10 +107,43 @@ def main():
 
     #Deque
     #https://www.geeksforgeeks.org/deque-in-python/
+    print("Deque example")
+    queue = deque([1,3,2,5])
+    print(queue)
+    queue.append(4)
+    print(queue)
+    queue.appendleft(6)
+    print(queue)
+    queue.pop()
+    print(queue)
+    queue.popleft()
+    print(queue)
+    queue.insert(2,4) #put 4 in index 2
+    print(queue)
+    queue.remove(5)
+    print(queue)
+    del queue
 
+    queue = deque([1,6,4,6,4,4,3,3,2,4,6,4,1,2,3])
+    print(queue)
+    print("Count of 4 in deque is",queue.count(4))
+    queue.insert(1,4) #put 4 in index 1
+    print(queue)
+    print("Count of 4 in deque is",queue.count(4))
+    print("Between index 3 and 10, 6 occurs first at",queue.index(6,3,10))
+
+    queue.extend([4,2,5,3]) #extend at right
+    queue.extendleft([1,4,6,2,4]) #extend at left
+    print(queue)
+    print("Count of 4 in deque is",queue.count(4))
+    queue.rotate(-3) #rotate left by 3
+    print(queue)
+    queue.reverse() #reverse
+    print(queue)
 
     #Heap Queue
-
+    #https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
+    print("Heap queue example")
 
     #UserDict
 
