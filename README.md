@@ -23,7 +23,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-5_**: exception handling - simple calculator
 
-**_basic-6_**: python collections - counters, orderedDict, Defaultdict, Chainmap, Namedtuple, Deque, Heap queue, UserDict, UserList, UserString **[WIP]** [need details]
+**_basic-6_**: python collections - counters, orderedDict, Defaultdict, Chainmap, Namedtuple, Deque, Heap queue, UserDict, UserList, UserString
 
 basic-7: map, reduced, and filer functions **[planned]** [need details]
 

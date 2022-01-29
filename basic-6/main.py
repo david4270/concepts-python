@@ -8,6 +8,7 @@ import heapq
 from collections import UserDict
 from collections import UserList
 from collections import UserString
+from re import S
 
 from numpy import get_array_wrap
 
@@ -176,12 +177,73 @@ def main():
 
     #UserDict
     #https://www.geeksforgeeks.org/collections-userdict-in-python/
+    print("UserDict example")
+
+    class MyDict(UserDict):
+        def pop(self,s = None):
+            raise RuntimeError("Pop not allowed")
+        
+        def popitem(self, s = None):
+            raise RuntimeError("Popitem not allowed")
     
+    d = MyDict({'a':1,'b':2,'c':3})
+    e = {'a':1,'b':2,'c':3}
+    print(d)
+    print(e)
+    try:
+        e.pop("a")
+        d.pop("a") #This will raise error!
+    except RuntimeError:
+        print("Pop not allowed, but escaped by exception handling")
+    finally:
+        print(e)
+        print(d)
 
     #UserList
+    #https://www.geeksforgeeks.org/collections-userlist-in-python/
+    print("Userlist example")
 
+    class MyList(UserList):
+        def remove(self,s = None):
+            raise RuntimeError("Remove not allowed")
+        def pop(self,s = None):
+            raise RuntimeError("Pop not allowed")
+    li = MyList([1,6,3,2])
+    l2 = [1,6,3,2]
+
+    li.append(5)
+    l2.append(5)
+
+    print(li)
+    print(l2)
+
+    try:
+        l2.pop(3) #remove index 3 element
+        li.pop(3) #try to remove index 3 element
+    except RuntimeError:
+        print("Remove not allowed, but escaped by exception handling")
+    finally:
+        print(l2)
+        print(li)
 
     #UserString
+    #https://www.geeksforgeeks.org/collections-userstring-in-python/
+    print("UserString example")
+
+    class MyString(UserString):
+        def append(self,s):
+            self.data += s
+        def remove(self,s):
+            self.data = self.data.replace(s,"")
+    
+    s1 = MyString("Yeet")
+    print(s1)
+
+    s1.append("y")
+    print(s1)
+
+    s1.remove("e") #remove both es
+    print(s1)
 
 
      
