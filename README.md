@@ -27,13 +27,9 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-7_**: map, reduced, and filer functions examples
 
-basic-8: functional programming, metaprogramming, abstract classes **[planned]** [need details]
+**_basic-8_**: File handling, OS module, multiprocessing, multithreading, socket programming **[WIP]**
 
-basic-9: OS module, multiprocessing, socket programming **[planned]** [need details]
-
-basic-10: File handling **[planned]** [need details]
-
-basic-11: Regex **[planned]** [need details]
+basic-9: Regex **[planned]** [need details]
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
