@@ -9,7 +9,7 @@ print("\n\n <<strings>> \n\n")
 a = "Glory Glory Tottenham Hotspur \n"
 b = "and the Spurs go marching on \n\n"
 c = "Tottenham are the greatest team that the world has ever seen \n"
-d = "Royal Spurs supports and they come to every game \n"
+d = "Loyal Spurs supports and they come to every game \n"
 
 print(a)
 print(b)
