@@ -27,9 +27,15 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-7_**: map, reduced, and filer functions examples
 
-**_basic-8_**: File handling, OS module, multiprocessing, multithreading, socket programming examples **[WIP]**
+**_basic-8_**: File handling, OS module
 
-basic-9: Regex **[planned]** [need details]
+**_basic-9_**: Multithreading
+
+**_basic-10_**: Multiprocessing **[WIP]**
+
+**_basic-11_**: Socket programming examples **[WIP]**
+
+basic-12: Regex **[planned]** [need details]
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
