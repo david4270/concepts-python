@@ -33,9 +33,9 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-10_**: Multiprocessing **[WIP]**
 
-**_basic-11_**: Socket programming examples **[WIP]**
+basic-11: Socket programming examples **[planned]**
 
-basic-12: Regex **[planned]** [need details]
+basic-12: Regex **[planned]**
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
@@ -46,7 +46,7 @@ Revising algorithms and data structures course concepts (ECE345).
 
 **_algo-3_**: permutations, combinations
 
-algo-4: probability and Bayes' theorem **[planned]** [need details]
+**_algo-4_**: probability and Bayes' theorem
 
 algo-5: binary search tree **[planned]** [need details]
 
