@@ -16,7 +16,9 @@ def fibonacci(a):
 # Factorial n! = n*(n-1)*(n-2)* ... *2*1
 # Check basic-3
 def factorial(a):
-    if(a == 1):
+    if(a == 0):
+        return 1
+    elif(a == 1):
         return 1
     else:
         return a*factorial(a-1)
