@@ -27,7 +27,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-7_**: map, reduced, and filer functions examples
 
-**_basic-8_**: File handling, OS module, multiprocessing, multithreading, socket programming **[WIP]**
+**_basic-8_**: File handling, OS module, multiprocessing, multithreading, socket programming examples **[WIP]**
 
 basic-9: Regex **[planned]** [need details]
 
@@ -99,9 +99,13 @@ Intermediate-level python concepts and mini-projects.
 
 intermediate-1: More difficult object-oriented concepts - polymorphism, class and static varibles, destructors, metaclasses, reflection, garbage collection **[planned]** [need details]
 
-intermediate-2:
+intermediate-2: Multithreading deep-down **[planned]** [need details]
 
 intermediate-3: 
+
+intermediate-4:
+
+intermediate-5:
 
 ## **Machine Learning**
 Machine learning miniproject. Using Jupyter Notebook (.ipynb)
