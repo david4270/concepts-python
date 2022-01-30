@@ -3,7 +3,7 @@
 from concurrent.futures import thread
 import os
 import threading
-import time
+import multiprocessing
 
 #Global variable x
 x = 0
@@ -32,6 +32,7 @@ def print_sqr(num):
     print("ID of process running print_sqr: {}".format(os.getpid()))
 
 def main():
+    print("\nos example \n")
     #os.getcwd - get current directory
     dir = os.getcwd()
     print(dir)
@@ -92,6 +93,7 @@ def main():
 
     #Multithreading - introduction
     #https://www.geeksforgeeks.org/multithreading-python-set-1/?ref=lbp
+    print("\nMultithreading example 1 \n")
 
     print("main running in thread {}".format(threading.current_thread().name))
     print("ID of process running main: {}".format(os.getpid()))
@@ -109,8 +111,13 @@ def main():
     #Wait until thread 2 is completely executed
     t2.join()
 
+    print(t1.is_alive())
+    print(t2.is_alive())
+
     #Multithreading - synchronization
     #https://www.geeksforgeeks.org/multithreading-in-python-set-2-synchronization/
+    print("\nMultithreading example 2 \n")
+
     global x
     x=0
 
@@ -131,12 +138,35 @@ def main():
     for i in range(10):
         print("Iteration {0}: x = {1}".format(i,x))
 
+    print(t3.is_alive())
+    print(t4.is_alive())
+
     #Multiprocessing - introduction
     #https://www.geeksforgeeks.org/multiprocessing-python-set-1/?ref=lbp 
+    print("\nMultiprocessing example 1 \n")
+
+    print("ID of main process: {}".format(os.getpid()))
+
+    p1 = multiprocessing.Process(target = print_cube, name = 'p1', args=(10,))
+    p2 = multiprocessing.Process(target = print_sqr, name = 'p2', args=(10,))
+
+    p1.start()
+    p2.start()
+
+    print("ID of process p1: {}".format(p1.pid))
+    print("ID of process p2: {}".format(p2.pid))
+
+    p1.join()
+    p2.join()
+
+    print("Process p1 alive: {}".format(p1.is_alive()))
+    print("Process p2 alive: {}".format(p2.is_alive()))
 
 
     #Multiprocessing - communication between processes
-    #
+    #https://www.geeksforgeeks.org/multiprocessing-python-set-2/?ref=lbp 
+    print("\nMultiprocessing example 2 \n")
+    
 
 
     #Socket programming

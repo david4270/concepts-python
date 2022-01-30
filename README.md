@@ -36,37 +36,35 @@ Revising algorithms and data structures course concepts (ECE345).
 
 **_algo-1_**: basic mathematics - arithmetic and geometric sequence (+Fibonacci and Factorial revisit) 
 
-**_algo-2_**: sorting algorithms 
+**_algo-2_**: sorting algorithms - covers recurrences 
 
-algo-3: recurrences **[planned]** [need details] 
+**_algo-3_**: permutations, combinations
 
-algo-4: permutations, combinations **[planned]** [need details]
+algo-4: probability and Bayes' theorem **[planned]** [need details]
 
-algo-5: probability and Bayes' theorem **[planned]** [need details]
+algo-5: binary search tree **[planned]** [need details]
 
-algo-6: binary search tree **[planned]** [need details]
+algo-6: red-black tree **[planned]** [need details]
 
-algo-7: red-black tree **[planned]** [need details]
+algo-7: hash tables **[planned]** [need details]
 
-algo-8: hash tables **[planned]** [need details]
+algo-8: dynamic programming problem **[planned]** [need details]
 
-algo-9: dynamic programming problem **[planned]** [need details]
+algo-9: greedy algorithm problem **[planned]** [need details]
 
-algo-10: greedy algorithm problem **[planned]** [need details]
+algo-10: amortized analysis **[planned]** [need details]
 
-algo-11: amortized analysis **[planned]** [need details]
+algo-11: splay trees **[planned]** [need details]
 
-algo-12: splay trees **[planned]** [need details]
+algo-12: graph searching algorithms **[planned]** [need details]
 
-algo-13: graph searching algorithms **[planned]** [need details]
+algo-13: minimum spanning trees **[planned]** [need details]
 
-algo-14: minimum spanning trees **[planned]** [need details]
+algo-14: shortest path **[planned]** [need details]
 
-algo-15: shortest path **[planned]** [need details]
+algo-15: maximum flow problem **[planned]** [need details]
 
-algo-16: maximum flow problem **[planned]** [need details]
-
-algo-17: NP-completeness **[planned]** [need details]
+algo-16: NP-completeness **[planned]** [need details]
 
 ## **Data Science**
 Basic data science skills, such as pandas, numpy, and pytorch. Also covers graphing libraries, such as matplotlib and seaborn.
@@ -99,9 +97,9 @@ Intermediate-level python concepts and mini-projects.
 
 intermediate-1: More difficult object-oriented concepts - polymorphism, class and static varibles, destructors, metaclasses, reflection, garbage collection **[planned]** [need details]
 
-intermediate-2: Multithreading deep-down **[planned]** [need details]
+intermediate-2: Multithreading mini project **[planned]** [need details]
 
-intermediate-3: 
+intermediate-3: Multiprocessing mini project **[planned]** [need details]
 
 intermediate-4:
 
