@@ -48,7 +48,7 @@ Revising algorithms and data structures course concepts (ECE345).
 
 **_algo-4_**: probability and Bayes' theorem
 
-algo-5: binary search tree **[planned]** [need details]
+algo-5: binary search tree **[WIP]**
 
 algo-6: red-black tree **[planned]** [need details]
 
