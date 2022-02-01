@@ -31,6 +31,16 @@ def insertRecord(rcd, records):
     records.append(rcd)
     print("New record {} added!\n".format(rcd[0]))
 
+def sqrQueue(mylist, q):
+    for num in mylist:
+        q.put(num*num)
+
+def printQueue(q):
+    print("Queue elements:")
+    while not q.empty():
+        print(q.get())
+    print("Queue is now empty!")
+
 def main():
     #Multiprocessing - introduction
     #https://www.geeksforgeeks.org/multiprocessing-python-set-1/?ref=lbp 
@@ -96,6 +106,17 @@ def main():
 
     print("\nMultiprocessing example 4 - communication between processes: queue \n")
 
+    #reuse mylist = [1,2,3,4,5]
+    q = multiprocessing.Queue()
+
+    p6 = multiprocessing.Process(target = sqrQueue, args = (mylist,q))
+    p7 = multiprocessing.Process(target = printQueue, args = (q,))
+
+    p6.start()
+    p7.start()
+
+    p6.join()
+    p7.join()
 
 
     print("\nMultiprocessing example 5 - communication between processes: pipe \n")
