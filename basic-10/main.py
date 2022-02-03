@@ -24,26 +24,31 @@ def sqrList(mylist, result, square_sum):
         result[idx] = num*num
     #square_sum given value
     square_sum.value = sum(result)
+    print("ID of process running sqrList: {}".format(os.getpid()))
     print("Result in process p3: {}".format(result[:]))
     print("Sum of squares in process p3: {}".format(square_sum.value))
 
 ############# Example 3 ######################
 
 def printRecord(records):
+    print("ID of process running printRecord: {}".format(os.getpid()))
     for rcd in records:
         print("Name: {0} Score: {1}\n".format(rcd[0],rcd[1]))
 
 def insertRecord(rcd, records):
+    print("ID of process running insertRecord: {}".format(os.getpid()))
     records.append(rcd)
     print("New record {} added!\n".format(rcd[0]))
 
 ############# Example 4 ######################
 
 def sqrQueue(mylist, q):
+    print("ID of process running setQueue: {}".format(os.getpid()))
     for num in mylist:
         q.put(num*num)
 
 def printQueue(q):
+    print("ID of process running printQueue: {}".format(os.getpid()))
     print("Queue elements:")
     while not q.empty():
         print(q.get())
@@ -52,6 +57,7 @@ def printQueue(q):
 ############# Example 5 ######################
 
 def sender(conn,msgs):
+    print("ID of process running sender: {}".format(os.getpid()))
     for m in msgs:
         #use send() method to send message from one end of pipe
         conn.send(m)
@@ -59,6 +65,7 @@ def sender(conn,msgs):
     conn.close()
 
 def receiver(conn):
+    print("ID of process running receiver: {}".format(os.getpid()))
     while 1:
         #use recv() method to receive message at the other end of pipe
         msg = conn.recv()
@@ -69,11 +76,69 @@ def receiver(conn):
 
 ############# Example 6 ######################
 
+# Withdraw from account
+def withdraw(balance):
+    print("ID of process running withdraw: {}".format(os.getpid()))
+    for _ in range(10000):
+        balance.value = balance.value - 1
 
+# Deposit to account
+def deposit(balance):
+    print("ID of process running deposit: {}".format(os.getpid()))
+    for _ in range(10000):
+        balance.value = balance.value +1
+
+# Perform transactions
+def perform_transactions():
+    #initial balance
+    balance = multiprocessing.Value('i',100)
+
+    pA = multiprocessing.Process(target = withdraw, args=(balance,))
+    pB = multiprocessing.Process(target = deposit, args=(balance,))
+
+    pA.start()
+    pB.start()
+
+    pA.join()
+    pB.join()
+
+    print("Final Balance:",balance.value)
 
 ############# Example 7 ######################
 
+# Withdraw from account
+def withdraw_withLock(balance, lock):
+    print("ID of process running withdraw: {}".format(os.getpid()))
+    for _ in range(10000):
+        lock.acquire()
+        balance.value = balance.value - 1
+        lock.release()
 
+# Deposit to account
+def deposit_withLock(balance, lock):
+    print("ID of process running deposit: {}".format(os.getpid()))
+    for _ in range(10000):
+        lock.acquire()
+        balance.value = balance.value +1
+        lock.release()
+
+# Perform transactions
+def perform_transactions_withLock():
+    #initial balance
+    balance = multiprocessing.Value('i',100)
+
+    lock = multiprocessing.Lock()
+
+    pC = multiprocessing.Process(target = withdraw_withLock, args=(balance,lock))
+    pD = multiprocessing.Process(target = deposit_withLock, args=(balance,lock))
+
+    pC.start()
+    pD.start()
+
+    pC.join()
+    pD.join()
+
+    print("Final Balance:",balance.value)
 
 ############# Example 8 ######################
 
@@ -183,9 +248,67 @@ def main():
     #https://www.geeksforgeeks.org/synchronization-pooling-processes-python/
     print("\nMultiprocessing example 6 - race \n")
 
+    for _ in range(10):
+        # perform_transactions() for 10 times
+        perform_transactions()
+    
+    # Oh no! Process racing happens. Expected to have 100 as final balance (100-10000+10000)
+    # This happens due to concurrent access of processes to the shared data 'balance' -> race condition
+
+    """
+    current balance = 100
+
+    pA    read()                   balance = 100-1 = 99
+    pB                read()                                 balance = 100+1 = 101    
+
+    WRONG OPERATION CARRIED OUT!
+    """
+
+    """
+    current balance = 100
+
+    pA    read()     balance = 100-1 = 99
+    pB                                         read()       balance = 99+1 = 100   
+
+    Operation carried out properly
+    """
+
+    """
+    current balance = 100
+
+    pA                                         read()       balance = 101-1 = 100
+    pB    read()     balance = 100+1 = 101    
+
+    Operation carried out properly
+    """
 
     print("\nMultiprocessing example 7 - using locks \n")
 
+    for _ in range(10):
+        # perform_transactions_withLock() for 10 times
+        perform_transactions_withLock()
+    
+    # Okay, this one returns proper value (100) lol. Why does it happen?
+    # Because withdraw and deposit happens after the lock is acquired!!
+    # Making sure that shared data 'balance' is accessed by only one process every time
+
+    """
+    current balance = 100
+
+    pA    read()      lock     balance = 100-1 = 99    release
+    pB                                                           read()     lock    balance = 99+1 = 100    release
+ 
+    Operation carried out properly
+    """
+
+    """
+    current balance = 100
+ 
+    pA                                                            read()    lock    balance = 101-1 = 100    releasse
+    pB    read()      lock     balance = 100+1 = 101    release  
+
+    Operation carried out properly
+    """
 
     print("\nMultiprocessing example 8 - pooling between processes \n")
 
