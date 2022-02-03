@@ -142,7 +142,9 @@ def perform_transactions_withLock():
 
 ############# Example 8 ######################
 
-
+def sqr(n):
+    print("Worker process id for {0}:{1}".format(n,os.getpid()))
+    return n*n
 
 ################## main ######################
 
@@ -311,6 +313,18 @@ def main():
     """
 
     print("\nMultiprocessing example 8 - pooling between processes \n")
+
+    # Task is offloaded/distributed among the cores/processes automatically by Pool object
+    # User doesn't need to worry about creating processes explicitly
+
+    # Well AMD Ryzen 7 2700X has 16 threads, need to have a list longer than 16!
+    mylistLarge = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+
+    p = multiprocessing.Pool()
+
+    result = p.map(sqr,mylistLarge)
+
+    print(result)
 
 
 
