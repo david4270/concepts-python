@@ -4,6 +4,8 @@ import os
 import threading
 import multiprocessing
 
+############### Example 1 ##################
+
 def print_cube(num):
     print("Cube: {}".format(num * num * num))
     print("print_cube assigned to thread {}".format(threading.current_thread().name))
@@ -14,6 +16,8 @@ def print_sqr(num):
     print("print_sqr assigned to thread {}".format(threading.current_thread().name))
     print("ID of process running print_sqr: {}".format(os.getpid()))
 
+############# Example 2 ######################
+
 def sqrList(mylist, result, square_sum):
     #result array given value
     for idx, num in enumerate(mylist):
@@ -23,6 +27,8 @@ def sqrList(mylist, result, square_sum):
     print("Result in process p3: {}".format(result[:]))
     print("Sum of squares in process p3: {}".format(square_sum.value))
 
+############# Example 3 ######################
+
 def printRecord(records):
     for rcd in records:
         print("Name: {0} Score: {1}\n".format(rcd[0],rcd[1]))
@@ -30,6 +36,8 @@ def printRecord(records):
 def insertRecord(rcd, records):
     records.append(rcd)
     print("New record {} added!\n".format(rcd[0]))
+
+############# Example 4 ######################
 
 def sqrQueue(mylist, q):
     for num in mylist:
@@ -41,18 +49,37 @@ def printQueue(q):
         print(q.get())
     print("Queue is now empty!")
 
+############# Example 5 ######################
+
 def sender(conn,msgs):
     for m in msgs:
+        #use send() method to send message from one end of pipe
         conn.send(m)
         print("Send the message:",m)
     conn.close()
 
 def receiver(conn):
     while 1:
+        #use recv() method to receive message at the other end of pipe
         msg = conn.recv()
         if msg == "END":
             break
         print("Received the message:",msg)
+
+
+############# Example 6 ######################
+
+
+
+############# Example 7 ######################
+
+
+
+############# Example 8 ######################
+
+
+
+################## main ######################
 
 def main():
     #Multiprocessing - introduction
@@ -136,11 +163,14 @@ def main():
 
 
     print("\nMultiprocessing example 5 - communication between processes: pipe \n")
+
     msgList = ["Tottenham","are","the","greatest","team","that","the","world","has","ever","seen","END"]
+
+    #Create pipe
     parCon, chiCon = multiprocessing.Pipe()
 
-    p8 = multiprocessing.Process(target = sender, args = (parCon, msgList))
-    p9 = multiprocessing.Process(target = receiver, args = (chiCon,))
+    p8 = multiprocessing.Process(target = sender, args = (parCon, msgList)) #set sender pipe
+    p9 = multiprocessing.Process(target = receiver, args = (chiCon,)) #set receiver pipe
 
     p8.start()
     p9.start()

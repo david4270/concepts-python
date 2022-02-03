@@ -6,6 +6,8 @@ import threading
 #Global variables
 x = 0
 
+########## Example 2 #############
+
 def incrementCtr():
     global x
     x += 1
@@ -18,6 +20,8 @@ def thread_task(lock):
         incrementCtr()
         lock.release()
 
+########### Example 1 ##############
+
 def print_cube(num):
     print("Cube: {}".format(num * num * num))
     print("print_cube assigned to thread {}".format(threading.current_thread().name))
@@ -27,6 +31,8 @@ def print_sqr(num):
     print("Square: {}".format(num*num))
     print("print_sqr assigned to thread {}".format(threading.current_thread().name))
     print("ID of process running print_sqr: {}".format(os.getpid()))
+
+########### main ###################
 
 def main():
     #Multithreading - introduction
