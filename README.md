@@ -33,7 +33,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-10_**: Multiprocessing
 
-basic-11: Socket programming examples **[planned]**
+**_basic-11_**: Socket programming examples **[WIP]**
 
 basic-12: Regex **[planned]**
 
