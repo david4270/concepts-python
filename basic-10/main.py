@@ -41,6 +41,19 @@ def printQueue(q):
         print(q.get())
     print("Queue is now empty!")
 
+def sender(conn,msgs):
+    for m in msgs:
+        conn.send(m)
+        print("Send the message:",m)
+    conn.close()
+
+def receiver(conn):
+    while 1:
+        msg = conn.recv()
+        if msg == "END":
+            break
+        print("Received the message:",msg)
+
 def main():
     #Multiprocessing - introduction
     #https://www.geeksforgeeks.org/multiprocessing-python-set-1/?ref=lbp 
@@ -107,9 +120,12 @@ def main():
     print("\nMultiprocessing example 4 - communication between processes: queue \n")
 
     #reuse mylist = [1,2,3,4,5]
+    #Create multiprocessing queue
     q = multiprocessing.Queue()
 
+    #in sqrQueue, insert into queue
     p6 = multiprocessing.Process(target = sqrQueue, args = (mylist,q))
+    #in printQueue, get queue content
     p7 = multiprocessing.Process(target = printQueue, args = (q,))
 
     p6.start()
@@ -120,7 +136,17 @@ def main():
 
 
     print("\nMultiprocessing example 5 - communication between processes: pipe \n")
+    msgList = ["Tottenham","are","the","greatest","team","that","the","world","has","ever","seen","END"]
+    parCon, chiCon = multiprocessing.Pipe()
 
+    p8 = multiprocessing.Process(target = sender, args = (parCon, msgList))
+    p9 = multiprocessing.Process(target = receiver, args = (chiCon,))
+
+    p8.start()
+    p9.start()
+
+    p8.join()
+    p9.join()
 
 
     #Synchronization and Pooling of processes in Python
