@@ -31,7 +31,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-9_**: Multithreading
 
-**_basic-10_**: Multiprocessing **[WIP]**
+**_basic-10_**: Multiprocessing
 
 basic-11: Socket programming examples **[planned]**
 
