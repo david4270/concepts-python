@@ -153,11 +153,27 @@ def main():
     # {} indicate # of occurrences of a preceding regex to match
     print("Example of {} in regex")
 
+    match = re.search(r't{2,3}',s1) # 'Tottenham' has 2 repeated t's - return tt
+    print(match)
+
+    match = re.search(r'e{2,3}',s1) # 'seen' has 2 repeated e's - return ee
+    print(match)
+
+    match = re.search(r'e{3}',s1) # nothing has eee - return none
+    print(match)
+
     print()
 
     # () enclose a group of regex
     print("Example of () in regex")
+    match = re.search(r'(T|S)o..en.am',s1) # First character T or S, and then as given... return Tottenham
+    print(match)
 
+    match = re.search(r'(T|C)o(t+|m)..',s1) # For string 's1' - First character T or C, second characer o, then recurring ts or m, and two characters - return 'Totten'
+    print(match)
+
+    match = re.search(r'(T|C)o(t+|m)..',coys) # For string 'coys' - First character T or C, second characer o, then recurring ts or m, and two characters - return 'Come '
+    print(match)
     print()
 
     ### Special Sequences ###
