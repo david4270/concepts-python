@@ -22,6 +22,7 @@ def threaded(c):
             break
         
         # reverse the given string from client
+        #https://www.geeksforgeeks.org/random-numbers-in-python/
         if(random.choice([1,2,3,4]) %2 == 0):
             data = data[::-1]
         else:

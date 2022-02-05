@@ -33,9 +33,9 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-10_**: Multiprocessing
 
-**_basic-11_**: Socket programming examples **[WIP]**
+**_basic-11_**: Socket programming examples
 
-basic-12: Regex **[planned]**
+**_basic-12_**: Regex **[WIP]**
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
