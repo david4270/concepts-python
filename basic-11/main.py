@@ -6,7 +6,6 @@ import socket
 import sys
 
 
-
 def main():
     #Socket programming
     #https://www.geeksforgeeks.org/socket-programming-python/?ref=lbp 
@@ -27,8 +26,14 @@ def main():
     s.connect((host_ip,port))
     print("the socket has successfully connected to google at {0} port {1}".format(host_ip,str(port)))
 
+    # Server -> server.py
+    # Client -> client.py
+
     #Socket programming with multi-threading
     #https://www.geeksforgeeks.org/socket-programming-multi-threading-python/?ref=lbp
+
+    # Server multithreading -> serverht.py
+    # Client multithreading -> clientht.py
 
 
 if __name__ == "__main__":
