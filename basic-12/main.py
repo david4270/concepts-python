@@ -1,10 +1,13 @@
 #Regex
+#https://www.programiz.com/python-programming/regex
 
 import re
 
 def main():
     ##### Introduction to Regex #####
     # https://www.geeksforgeeks.org/regular-expression-python-examples-set-1/?ref=lbp
+
+    # Regex is case sensitive!
 
     print("Simple regex example")
 
@@ -177,9 +180,100 @@ def main():
     print()
 
     ### Special Sequences ###
+    # \A matches if the string begins with the given character(s)
+    print("Example of \\A in regex")
 
+    match = re.search(r'\ACome',coys) #return Come - starts with Come
+    print(match)
+
+    match = re.search(r'\ACome',s1) #should return none - starts with Tottenham
+    print(match)
+    print()
+
+    # \b matches if the word begins/ends with given character(s) - \b(str) check beginning of the word, (str)\b check end of the word
+    print("Example of \\b in regex")
+    match = re.search(r'\bCo',coys) #return Co - Come starts with Co
+    print(match)
+
+    match = re.search(r'me\b',coys) #return me - Come ends with me
+    print(match)
+
+    match = re.search(r'urs\b',coys) #return urs - Spurs ends with urs
+    print(match)
+    print()
+
+    # \B opposite of \b - string should not start/end with given regex
+    print("Example of \\B in regex")
+    match = re.search(r'\Bome',coys) #return ome - Come does not start with ome
+    print(match)
+
+    match = re.search(r'\Burs',coys) #return urs - Spurs does not start with urs
+    print(match)
+    print()
+
+    # \d matches any decimal digit ([0-9])
+    print("Example of \\d in regex")
+    match = re.search(r'\d',s) #first digit - return 1
+    print(match)
+
+    match = re.search(r'\d+',s) #Longer than one digit - return 1882
+    print(match)
+    print()
+
+    # \D matches any non digit character ([^0-9])
+    print("Example of \\D in regex")
+
+
+    print()
+
+    # \s matches any whitespace character
+    print("Example of \\s in regex")
+
+
+    print()
+
+    # \S matches any nonwhitespace character
+    print("Example of \\S in regex")
+
+
+    print()
+
+    # \w matches any alphanumeric character ([a-z,A-Z,0-9])
+    print("Example of \\w in regex")
+
+
+    print()
+
+    # \W matches any non-alphanumeric character ([^a-z,^A-Z,^0-9])
+    print("Example of \\W in regex")
+
+
+    print()
+
+    # \Z matches if the string ends with given regex
+    print("Example of \\Z in regex")
+
+
+    print()
 
     ### Regex module in python ###
+    # re.findall() returns all non-overlapping matches of pattern in string, as list of strings
+
+    # re.compile() regular expressions compiled into pattern objects - return list of strings satisfy regex
+
+    # re.split() splits string by occurrences of characters of character or a pattern
+
+    # re.sub() stands for substring - replace substring of string with replacement string, given flag conditions
+
+    # re.subn() - returns tuple with count of total of replacement and string, otherwise same as sub()
+
+    # re.escape() - return string with all non-alphanumerics backslashed
+
+    # re.search() - gives where first occurrence happens
+    # start() gives where match starts
+    # end() gives where match ends
+    # span() gives tuple including start and end
+    # group() returns substring where patterns match
 
 
     ##### Search, Match, Findall #####
