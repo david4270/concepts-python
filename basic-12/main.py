@@ -216,44 +216,60 @@ def main():
     match = re.search(r'\d',s) #first digit - return 1
     print(match)
 
-    match = re.search(r'\d+',s) #Longer than one digit - return 1882
+    match = re.search(r'\d+',s) #Longer than one digit - return 1882 (before characters)
     print(match)
     print()
 
     # \D matches any non digit character ([^0-9])
     print("Example of \\D in regex")
+    match = re.search(r'\D',s) #first non-digit - return T
+    print(match)
 
+    match = re.search(r'\D+',s) #return all characters (non-digits) before digits
+    print(match)
+
+    match = re.search(r'\D+',coys) #return all characters (non-digits) before digits
+    print(match)
 
     print()
 
     # \s matches any whitespace character
     print("Example of \\s in regex")
-
+    match = re.search(r'\s',coys) #return first whitespace
+    print(match)
 
     print()
 
     # \S matches any nonwhitespace character
     print("Example of \\S in regex")
-
+    match = re.search(r'\S+',coys) #return characters before first whitespace
+    print(match)
 
     print()
 
     # \w matches any alphanumeric character ([a-z,A-Z,0-9])
     print("Example of \\w in regex")
+    match = re.search(r'\w',s) #return first character which are alphanumeric (T)
+    print(match)
 
-
+    match = re.search(r'\w+',s) #return characters which are alphanumeric
+    print(match)
     print()
 
     # \W matches any non-alphanumeric character ([^a-z,^A-Z,^0-9])
     print("Example of \\W in regex")
-
+    match = re.search(r'\W',s) #return first character which are non-alphanumeric (space)
+    print(match)
 
     print()
 
     # \Z matches if the string ends with given regex
     print("Example of \\Z in regex")
+    match = re.search(r'en\Z',s1) #s1 ends with 'seen' - returns en
+    print(match)
 
-
+    match = re.search(r'rs\Z',coys) #coys ends with 'Spurs' - returns rs
+    print(match)
     print()
 
     ### Regex module in python ###
