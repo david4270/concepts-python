@@ -331,28 +331,42 @@ def main():
     # span() gives tuple including start and end
     # group() returns substring where patterns match
 
+    print("re.search() example")
+
     match = re.search(r"([a-zA-Z]+) (\d+)", 'July 24th 1999, at 7:21 AM')
-    print(match.re)
-    print(match.start())
-    print(match.end())
-    print(match.span())
-    print(match.group())
-
-
-    ##### Search, Match, Findall #####
-    # https://www.geeksforgeeks.org/regular-expressions-python-set-1-search-match-find/
-
-
-
-    ##### search vs findall #####
-    # https://www.geeksforgeeks.org/python-regex-re-search-vs-re-findall/?ref=lbp
-
-
-
+    if match != None:
+        print("Match index:",match.span())
+        print("Full day:",match.group(0))
+        print("Month:",match.group(1))
+        print("Day:",match.group(2))
+    else:
+        print("Regex doesn't match")
+    
     ##### Verbose in Python Regex #####
     # https://www.geeksforgeeks.org/verbose-in-python-regex/?ref=lbp
+    print("Verbose in regex")
+    # Verbose = write regular expressions that look nicer and more readable
 
+    exampleEmail = re.compile(r"^([a-z0-9_\.-]+)@([0-9a-z\.-]+)\.([a-z]+)$",re.IGNORECASE)
+    exampleEmail2 = re.compile(r"""
+                                ^([a-z0-9_\.-]+)
+                                @
+                                ([0-9a-z\.-]+)
+                                \.
+                                ([a-z]+)$
+                                """, re.VERBOSE | re.IGNORECASE)
 
+    em1=exampleEmail.fullmatch("david990724@gmail.com")
+    print(em1.group(1))
+    print(em1.group(2))
+    print(em1.group(3))
+    em2=exampleEmail2.fullmatch("david.myeonghun.song@gmail.com")
+    print(em2.group(1))
+    print(em2.group(2))
+    print(em2.group(3))
+
+    print(em1)
+    print(em2)
 
     ##### Password Validation in Python #####
     # https://www.geeksforgeeks.org/password-validation-in-python/?ref=lbp
