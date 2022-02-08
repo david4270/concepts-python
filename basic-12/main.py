@@ -183,10 +183,10 @@ def main():
     # \A matches if the string begins with the given character(s)
     print("Example of \\A in regex")
 
-    match = re.search(r'\ACome',coys) #return Come - starts with Come
+    match = re.search(r'\ACome',coys) #return Come - coys starts with Come
     print(match)
 
-    match = re.search(r'\ACome',s1) #should return none - starts with Tottenham
+    match = re.search(r'\ACome',s1) #should return none - s1 starts with Tottenham
     print(match)
     print()
 
@@ -274,22 +274,69 @@ def main():
 
     ### Regex module in python ###
     # re.findall() returns all non-overlapping matches of pattern in string, as list of strings
+    print("Example of re.findall()")
+    chant = "Glory glory Tottenham Hotspur\n" * 3 + "And the Spurs go marching on"
+    print(chant)
+    
+    match = re.findall(r'\S+',chant) # divide by whitespace
+    print(match)
+    
+    match = re.findall(r'\bGlory',chant) # find all occurrences of Glory (case sensitive)
+    print(match)
 
     # re.compile() regular expressions compiled into pattern objects - return list of strings satisfy regex
+    print("Example of re.compile()")
+
+    match = re.compile('[a-e,A-E]') # All occurrences of A-E, a-e
+    print(match.findall(chant))
+
+    match = re.compile('\S+') #should produce same output as using only findall
+    print(match.findall(chant))
 
     # re.split() splits string by occurrences of characters of character or a pattern
+    print("Example of re.split()")
+
+    match = re.split(r'\D+', 'July 24th 1999, at 7:21 AM') #Split by non-numeric occurrences
+    print(match)
+
+    match = re.split(r'\bglory', chant, flags = re.IGNORECASE) #IGNORECASE - case ignored, splitted by glory (case insensitive)
+    print(match)
+
+    match = re.split(r'[g,G,\n]', chant, flags = re.IGNORECASE) #IGNORECASE - case ignored, splitted by g/G or \n
+    print(match)
 
     # re.sub() stands for substring - replace substring of string with replacement string, given flag conditions
+    print("Example of re.sub()")
+
+    print(re.sub("Hello","Hi","Hello sir, my name is David")) #change Hello to Hi
+
+    print(re.sub("Glory","Hello",chant, flags = re.IGNORECASE)) #change glory (case insensitive) to Hello
 
     # re.subn() - returns tuple with count of total of replacement and string, otherwise same as sub()
+    print("Example of re.subn()")
+
+    yeet = re.subn("Hate","LOVE","Hate the enemies - hate!", flags = re.IGNORECASE) #Change Hate (case insensitive) to LOVE, return # of changes
+    print(yeet)
+    print(yeet[0])
+    print(yeet[1])
 
     # re.escape() - return string with all non-alphanumerics backslashed
+    print("Example of re.escape()")
+    print(re.escape(chant))
+    print(re.escape(coys))
 
     # re.search() - gives where first occurrence happens
     # start() gives where match starts
     # end() gives where match ends
     # span() gives tuple including start and end
     # group() returns substring where patterns match
+
+    match = re.search(r"([a-zA-Z]+) (\d+)", 'July 24th 1999, at 7:21 AM')
+    print(match.re)
+    print(match.start())
+    print(match.end())
+    print(match.span())
+    print(match.group())
 
 
     ##### Search, Match, Findall #####
