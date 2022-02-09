@@ -3,6 +3,8 @@
 
 import re
 
+from sqlalchemy import false
+
 def main():
     ##### Introduction to Regex #####
     # https://www.geeksforgeeks.org/regular-expression-python-examples-set-1/?ref=lbp
@@ -347,6 +349,8 @@ def main():
     print("Verbose in regex")
     # Verbose = write regular expressions that look nicer and more readable
 
+    sampleEmail = input("Type your email:")
+
     exampleEmail = re.compile(r"^([a-z0-9_\.-]+)@([0-9a-z\.-]+)\.([a-z]+)$",re.IGNORECASE)
     exampleEmail2 = re.compile(r"""
                                 ^([a-z0-9_\.-]+)
@@ -364,12 +368,66 @@ def main():
     print(em2.group(1))
     print(em2.group(2))
     print(em2.group(3))
+    sem=exampleEmail2.fullmatch(sampleEmail)
+    print(sem.group(1))
+    print(sem.group(2))
+    print(sem.group(3))
 
     print(em1)
     print(em2)
+    print(sem)
 
     ##### Password Validation in Python #####
     # https://www.geeksforgeeks.org/password-validation-in-python/?ref=lbp
+    
+    # Conditions for a valid password
+    # Should have at least one number
+    # Should have at least one uppercase and one lowercase character
+    # Should have at least one special symbol
+    # Should be 8 to 16 characters long
+
+    pawd = input("Type your password:")
+
+    def pwdCheck(passwd):
+        SpecialSym = ['@','#','$','%','^','&','*']
+        val = True
+        
+        if len(passwd) < 8:
+            print("Password too short - should be 8-16 characters long")
+            val = False
+        if len(passwd) > 16:
+            print("Password too long - should be 8-16 characters long")
+            val = False
+        if not any(char.isdigit() for char in passwd):
+            print("Password should include at least one digit")
+            val = False
+        if not any(char.isupper() for char in passwd):
+            print("Password should include at least one upper case")
+            val = False
+        if not any(char.islower() for char in passwd):
+            print("Password should include at least one lower case")
+            val = False
+        if not any(char in SpecialSym for char in passwd):
+            print("Password should have at least one of the symbols - @,#,$,%,^,&,*")
+            val = False
+        if val:
+            return val
+    
+    if(pwdCheck(pawd)):
+        print("Password valid")
+    else:
+        print("Invalid password")
+    
+    def regPwdCheck(passwd):
+        reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,16}$"
+        pat = re.compile(reg)
+        mat = re.search(pat,passwd)
+        return mat
+    
+    if(regPwdCheck(pawd)):
+        print("Password valid by regex")
+    else:
+        print("Invalid password by regex")
 
 
 
