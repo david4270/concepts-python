@@ -35,7 +35,7 @@ https://www.geeksforgeeks.org/python-programming-language/
 
 **_basic-11_**: Socket programming examples
 
-**_basic-12_**: Regex **[WIP]**
+**_basic-12_**: Regex
 
 ## **Algorithms**
 Revising algorithms and data structures course concepts (ECE345).
